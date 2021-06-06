@@ -2,9 +2,9 @@
 /* IMPORT */
 
 const fs = require ( 'fs' );
-const zindex = require ( '..' );
-const zsize = require ( '../size' );
-const zspeed = require ( '../speed' );
+const {default: zindex} = require ( '..' );
+const {default: zsize} = require ( '../size' );
+const {default: zspeed} = require ( '../speed' );
 
 /* MAIN */
 
