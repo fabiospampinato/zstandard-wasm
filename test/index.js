@@ -2,20 +2,24 @@
 /* IMPORT */
 
 const fs = require ( 'fs' );
-const {default: ZSTD} = require ( '../dist' );
+const zindex = require ( '..' );
+const zsize = require ( '../size' );
+const zspeed = require ( '../speed' );
 
 /* MAIN */
 
-const test = async () => {
+const test = async zstd => {
 
-  await ZSTD.loadWASM ();
+  await zstd.loadWASM ();
 
-  const original = fs.readFileSync ( './zstd/zstd.wasm' );
-  const compressed = fs.readFileSync ( './zstd/zstd.wasm.zst' );
-  const decompressed = ZSTD.decompress ( compressed );
+  const original = fs.readFileSync ( './zstd/zstd.size.wasm' );
+  const compressed = fs.readFileSync ( './zstd/zstd.size.wasm.zst' );
+  const decompressed = zstd.decompress ( compressed );
 
   console.log ( original.equals ( decompressed ), 'Decompression works' );
 
 };
 
-test ();
+test ( zindex );
+test ( zsize );
+test ( zspeed );
