@@ -1,9 +1,9 @@
 
 /* IMPORT */
 
+import decode from 'decode-base64';
 import * as ZSTD_BASE64 from '../zstd/zstd';
 import {Instance} from './types';
-import decode from './decode';
 
 /* HELPERS */
 

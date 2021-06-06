@@ -5,7 +5,7 @@ A fast and small port of Zstandard to WASM. (Decompress-only for now).
 ## Features
 
 - **Fast**: Zstandard has been compiled with the `-03` flag, so all optimizations are enabled and it will go pretty fast. Potentially in the future Zstandard could be recompiled with SIMD instructions too.
-- **Small**: the whole library weighs ~27kb min+gizpped, with no dependencies other than Zstandard itself, which is bundled-in.
+- **Small**: the whole library weighs ~27kb min+gizpped, with no third-party dependencies other than Zstandard itself, which is bundled-in.
 - **Up-to-date**: starting from v1.5.0 of Zstandard this library aims to remain up to date with it, if you need version X of Zstandard install version X of `zstandard-wasm`.
 - **Decompress-only**: for now only a way to decompress `zstd` archives is exposed, potentially in the future a way to make `zstd` archives could be exposed too.
 - **TypeScript-ready**: the library is written in TypeScript so the exposed interface is clear.

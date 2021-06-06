@@ -32,6 +32,9 @@
     "fast",
     "small"
   ],
+  "dependencies": {
+    "decode-base64": "^1.0.0"
+  },
   "devDependencies": {
     "@types/node": "^15.12.1",
     "rimraf": "^3.0.2",
