@@ -2,6 +2,7 @@
 /* IMPORT */
 
 import decode from 'decode-base64';
+import once from 'once';
 import {Instance} from './types';
 
 /* MAIN */
@@ -19,9 +20,7 @@ const generate = ( ZSTD_BASE64: string ) => {
 
     /* LIFECYCLE API */
 
-    loadWASM: async (): Promise<void> => {
-
-      if ( instance || heap ) return;
+    loadWASM: once (async (): Promise<void> => {
 
       const initHeap = () => heap = new Uint8Array ( instance!.memory.buffer );
 
@@ -35,7 +34,7 @@ const generate = ( ZSTD_BASE64: string ) => {
 
       initHeap ();
 
-    },
+    }),
 
     /* API */
 

@@ -34,7 +34,8 @@
     "small"
   ],
   "dependencies": {
-    "decode-base64": "^1.0.0"
+    "decode-base64": "^1.0.0",
+    "once": "npm:@fabiospampinato/once@^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^15.12.1",
