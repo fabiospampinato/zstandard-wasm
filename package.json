@@ -1,7 +1,7 @@
 {
   "name": "zstandard-wasm",
   "description": "A fast and small port of Zstandard to WASM. (Decompress-only for now).",
-  "version": "1.5.0-rev.2",
+  "version": "1.5.0-rev.3",
   "main": "dist/speed.js",
   "types": "dist/speed.d.ts",
   "sideEffects": false,
