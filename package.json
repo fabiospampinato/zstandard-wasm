@@ -2,7 +2,7 @@
   "name": "zstandard-wasm",
   "repository": "github:fabiospampinato/zstandard-wasm",
   "description": "A fast and small port of Zstandard to WASM. (Decompress-only for now).",
-  "version": "1.5.0-rev.4",
+  "version": "1.5.0-rev.5",
   "type": "module",
   "sideEffects": false,
   "main": "dist/speed.js",
