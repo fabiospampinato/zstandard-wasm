@@ -17,7 +17,7 @@ emcc zstd.c -O3 -s EXPORTED_FUNCTIONS="['_ZSTD_decompress', '_ZSTD_findDecompres
 zstd -19 zstd.speed.wasm
 
 # Update JS (Speed)
-echo "module.exports = '$(base64 zstd.speed.wasm)';" > zstd.speed.js
+echo "export default '$(base64 zstd.speed.wasm)';" > zstd.speed.js
 
 # Update WASM (Size)
 emcc zstd.c -Oz -s EXPORTED_FUNCTIONS="['_ZSTD_decompress', '_ZSTD_findDecompressedSize', '_malloc', '_free']" -s ALLOW_MEMORY_GROWTH=1 --no-entry -o zstd.size.wasm
@@ -26,7 +26,7 @@ emcc zstd.c -Oz -s EXPORTED_FUNCTIONS="['_ZSTD_decompress', '_ZSTD_findDecompres
 zstd -19 zstd.size.wasm
 
 # Update JS (Size)
-echo "module.exports = '$(base64 zstd.size.wasm)';" > zstd.size.js
+echo "export default '$(base64 zstd.size.wasm)';" > zstd.size.js
 
 # Cleanup
 rm -rf zstd

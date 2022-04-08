@@ -1,25 +1,33 @@
 
 /* IMPORT */
 
-const fs = require ( 'fs' );
-const {default: zindex} = require ( '..' );
-const {default: zsize} = require ( '../size' );
-const {default: zspeed} = require ( '../speed' );
+import {describe} from 'fava';
+import fs from 'node:fs';
+import zsize from '../dist/size.js';
+import zspeed from '../dist/speed.js';
 
 /* MAIN */
 
-const test = async zstd => {
+describe ( 'zstandard', () => {
 
-  await zstd.loadWASM ();
+  for ( const [zstandard, name] of [[zsize, 'size'], [zspeed, 'speed']] ) {
 
-  const original = fs.readFileSync ( './zstd/zstd.size.wasm' );
-  const compressed = fs.readFileSync ( './zstd/zstd.size.wasm.zst' );
-  const decompressed = zstd.decompress ( compressed );
+    describe ( name, it => {
 
-  console.log ( original.equals ( decompressed ), 'Decompression works' );
+      it ( 'works', async t => {
 
-};
+        await zstandard.loadWASM ();
 
-test ( zindex );
-test ( zsize );
-test ( zspeed );
+        const original = fs.readFileSync ( './zstd/zstd.size.wasm' );
+        const compressed = fs.readFileSync ( './zstd/zstd.size.wasm.zst' );
+        const decompressed = zstandard.decompress ( compressed );
+
+        t.true ( original.equals ( decompressed ) );
+
+      });
+
+    });
+
+  }
+
+});

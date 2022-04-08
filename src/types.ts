@@ -1,5 +1,5 @@
 
-/* TYPES */
+/* MAIN */
 
 type Instance = {
   memory: Uint8Array,
@@ -11,4 +11,4 @@ type Instance = {
 
 /* EXPORT */
 
-export {Instance};
+export type {Instance};

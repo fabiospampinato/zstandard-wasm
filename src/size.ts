@@ -1,7 +1,7 @@
 
 /* IMPORT */
 
-import * as ZSTD_BASE64 from '../zstd/zstd.size.js';
+import ZSTD_BASE64 from '../zstd/zstd.size.js';
 import generate from './generate';
 
 /* MAIN */
