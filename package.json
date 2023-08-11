@@ -34,8 +34,8 @@
     "once": "npm:@fabiospampinato/once@2.0.0"
   },
   "devDependencies": {
-    "fava": "^0.2.0",
-    "tsex": "^2.2.0",
-    "typescript": "^4.9.5"
+    "fava": "^0.2.1",
+    "tsex": "^3.0.1",
+    "typescript": "^5.1.6"
   }
 }
