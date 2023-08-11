@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "decode-base64": "^3.0.1",
-    "once": "npm:@fabiospampinato/once@2.0.0"
+    "function-once": "^3.0.0"
   },
   "devDependencies": {
     "fava": "^0.2.1",

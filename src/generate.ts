@@ -2,7 +2,7 @@
 /* IMPORT */
 
 import decode from 'decode-base64';
-import once from 'once';
+import once from 'function-once';
 import type {Instance} from './types';
 
 /* MAIN */
